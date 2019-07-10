@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String SQL_LOGIN
             = "SELECT username as username, password, '1' as active "
             + "FROM account "
-            + "WHERE is_delete = 'false' AND username = ?";
+            + "WHERE username = ?";
 
     
     @Autowired

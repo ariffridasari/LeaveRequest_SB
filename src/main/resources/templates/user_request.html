@@ -123,7 +123,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Cancel Leave Request</h4>
+                        <h4 class="modal-title" id="myModalLabel">Form Leave Request</h4>
                     </div>
                     <div class="modal-body">
                         <div class="row mt">
@@ -134,7 +134,7 @@
                                             <div class="form-group ">
                                                 <label for="requester" class="control-label col-lg-3">Employee</label>
                                                 <div class="col-lg-7">
-                                                    <select name="requester" id="type" class="form-control">
+                                                    <select name="requester" id="type" class="form-control" required>
                                                         <option value="">-- Select Employee --</option>
                                                         <option th:each="data:${dataEmployee}" th:value="${data.id}" th:text="${data.firstName}"></option>
                                                     </select>
@@ -143,7 +143,7 @@
                                             <div class="form-group ">
                                                 <label for="type" class="control-label col-lg-3">Type Leave</label>
                                                 <div class="col-lg-7">
-                                                    <select name="type" id="type" class="form-control">
+                                                    <select name="type" id="type" class="form-control" required>
                                                         <option value="">-- Select Type --</option>
                                                         <option th:each="data:${dataType}" th:value="${data.id}" th:text="${data.name}"></option>
                                                     </select>
@@ -152,13 +152,13 @@
                                             <div class="form-group">
                                                 <label for="startDate" class="control-label col-md-3">Start Date</label>
                                                 <div class="col-md-3 col-xs-11">
-                                                    <input id="startDate" type="date" name="startDate" class="dateOK">
+                                                    <input id="startDate" type="date" name="startDate" class="dateOK" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label  for="endDate" class="control-label col-md-3">End Date</label>
                                                 <div class="col-md-3 col-xs-11">
-                                                    <input id="endDate" type="date" name="endDate" onchange="resultDate()" class="dateOK">
+                                                    <input id="endDate" type="date" name="endDate" onchange="resultDate()" class="dateOK" required>
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -283,7 +283,7 @@
 
                                             <td>
                                                 <!--<button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Cancel</button>-->
-                                                <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-ban"></i>&nbsp;&nbsp;Cancel</button>
+                                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#CancelReq"><i class="fa fa-ban"></i>&nbsp;&nbsp;Cancel</button>
                                             </td>
                                         </tr>
 

@@ -36,13 +36,6 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "Employee.findAll", query = "SELECT e FROM Employee e")})
 public class Employee implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-    @Id
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 10)
-    @Column(name = "id")
-    private String id;
     @Basic(optional = false)
     @NotNull
     @Size(min = 1, max = 30)
@@ -71,6 +64,14 @@ public class Employee implements Serializable {
     @Size(max = 5)
     @Column(name = "is_delete")
     private String isDelete;
+
+    private static final long serialVersionUID = 1L;
+    @Id
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 10)
+    @Column(name = "id")
+    private String id;
     @OneToMany(mappedBy = "manager", fetch = FetchType.LAZY)
     private List<Employee> employeeList;
     @JoinColumn(name = "manager", referencedColumnName = "id")
@@ -136,21 +137,6 @@ public class Employee implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
 
     public String getPhoneNumber() {
         return phoneNumber;
@@ -244,5 +230,53 @@ public class Employee implements Serializable {
     public String toString() {
         return "metrodatamii.metrodatamii.entities.Employee[ id=" + id + " ]";
     }
+
+//    public String getFirstName() {
+//        return firstName;
+//    }
+
+//    public void setFirstName(String firstName) {
+//        this.firstName = firstName;
+//    }
+//
+//    public String getLastName() {
+//        return lastName;
+//    }
+//
+//    public void setLastName(String lastName) {
+//        this.lastName = lastName;
+//    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getSalary() {
+        return salary;
+    }
+
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
+
+//    public String getPhoneNumber() {
+//        return phoneNumber;
+//    }
+//
+//    public void setPhoneNumber(String phoneNumber) {
+//        this.phoneNumber = phoneNumber;
+//    }
+//
+//    public String getIsDelete() {
+//        return isDelete;
+//    }
+//
+//    public void setIsDelete(String isDelete) {
+//        this.isDelete = isDelete;
+//    }
 
 }

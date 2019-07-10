@@ -24,36 +24,30 @@
                                                     <input class=" form-control" id="id" name="id" type="text" readonly/>
                                                 </div>
                                             </div>
-                                            <div class="form-group ">
+                                            <div class="hidden form-group ">
                                                 <label for="requester" class="control-label col-lg-3">Employee</label>
                                                 <div class="col-lg-7">
-                                                    <select name="requester" id="type" class="form-control">
-                                                        <option value="">-- Select Employee --</option>
-                                                        <option th:each="data:${dataEmployee}" th:value="${data.id}" th:text="${data.firstName}"></option>
-                                                    </select>
+                                                    <input class=" form-control" id="requester" name="requester" type="text" readonly/>
                                                 </div>
                                             </div>
                                             <div class="form-group ">
-                                                <label for="type" class="control-label col-lg-3">Type Leave</label>
+                                                <label for="requester1" class="control-label col-lg-3">Employee</label>
                                                 <div class="col-lg-7">
-                                                    <select name="type" id="type" class="form-control">
-                                                        <option value="">-- Select Type --</option>
-                                                        <option th:each="data:${dataType}" th:value="${data.id}" th:text="${data.name}"></option>
-                                                    </select>
+                                                    <input class=" form-control" id="requester1" name="requester1" type="text" readonly/>
                                                 </div>
                                             </div>
-                                            <!--                                        <div class="form-group ">
-                                                                                        <label for="requester" class="control-label col-lg-3">Employee</label>
-                                                                                        <div class="col-lg-7">
-                                                                                            <input class=" form-control" id="requester" name="requester" type="text" readonly/>
-                                                                                        </div>
-                                                                                    </div>-->
-                                            <!--                                        <div class="form-group ">
-                                                                                        <label for="type" class="control-label col-lg-3">Type Leave</label>
-                                                                                        <div class="col-lg-7">
-                                                                                             <input class=" form-control" id="type" name="type" type="text" readonly/>
-                                                                                        </div>
-                                                                                    </div>-->
+                                            <div class="hidden form-group ">
+                                                <label for="type" class="control-label col-lg-3">Type Leave</label>
+                                                <div class="col-lg-7">
+                                                    <input class=" form-control" id="type" name="type" type="text" readonly/>
+                                                </div>
+                                            </div>
+                                            <div class="form-group ">
+                                                <label for="type1" class="control-label col-lg-3">Type Leave</label>
+                                                <div class="col-lg-7">
+                                                    <input class=" form-control" id="type1" name="type1" type="text" readonly/>
+                                                </div>
+                                            </div>
                                             <div class="form-group ">
                                                 <label for="startDate" class="control-label col-lg-3">Start Date</label>
                                                 <div class="col-lg-7">
@@ -115,22 +109,28 @@
                                                         <input class=" form-control" id="id" name="id" type="text" readonly/>
                                                     </div>
                                                 </div>
-                                                <div class="form-group ">
+                                                <div class="hidden form-group ">
                                                     <label for="requester" class="control-label col-lg-3">Employee</label>
                                                     <div class="col-lg-7">
-                                                        <select name="requester" id="type" class="form-control">
-                                                            <option value="">-- Select Employee --</option>
-                                                            <option th:each="data:${dataEmployee}" th:value="${data.id}" th:text="${data.firstName}"></option>
-                                                        </select>
+                                                        <input class=" form-control" id="requester" name="requester" type="text" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="form-group ">
+                                                    <label for="requester1" class="control-label col-lg-3">Employee</label>
+                                                    <div class="col-lg-7">
+                                                        <input class=" form-control" id="requester1" name="requester1" type="text" readonly/>
+                                                    </div>
+                                                </div>
+                                                <div class="hidden form-group ">
                                                     <label for="type" class="control-label col-lg-3">Type Leave</label>
                                                     <div class="col-lg-7">
-                                                        <select name="type" id="type" class="form-control">
-                                                            <option value="">-- Select Type --</option>
-                                                            <option th:each="data:${dataType}" th:value="${data.id}" th:text="${data.name}"></option>
-                                                        </select>
+                                                        <input class=" form-control" id="type" name="type" type="text" readonly/>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group ">
+                                                    <label for="type1" class="control-label col-lg-3">Type Leave</label>
+                                                    <div class="col-lg-7">
+                                                        <input class=" form-control" id="type1" name="type1" type="text" readonly/>
                                                     </div>
                                                 </div>
                                                 <div class="form-group ">
@@ -270,22 +270,28 @@
                                                 <th>Total Leave</th>
                                                 <th>Status</th>
                                                 <th>Action</th>
+                                                <th hidden></th>
+                                                <th hidden></th>
+                                                <th hidden></th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr th:each="LR:${dataLR}">
                                                 <td id="id" th:text="${LR.id}"></td>
-                                                <td id="requester"  th:text="${LR.requester.firstName}"></td>
-                                                <td id="type" th:value="${LR.type}" th:text="${LR.type.name}"></td>
+                                                <td id="requester1"  th:text="${LR.requester.firstName}"></td>
+                                                <td id="type1" th:text="${LR.type.name}"></td>
                                                 <td id="notes" th:text="${LR.notes}"></td>
                                                 <td id="startDate" th:text="${LR.startDate}"></td>
                                                 <td id="endDate" th:text="${LR.endDate}"></td>
                                                 <td id="totalLeave" th:text="${LR.totalLeave}"></td>
-                                                <td id="status" th:value="${LR.status}" th:text="${LR.status.name}"></td>
+                                                <td id="status1" th:value="${LR.status}" th:text="${LR.status.name}"></td>
                                                 <td>
                                                     <button  type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#Approval"><i class="fa fa-check"></i>&nbsp;&nbsp;Approved</button><br><br>
                                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#Reject"><i class="fa fa-ban"></i>&nbsp;&nbsp;Rejected</button>
                                                 </td>
+                                                <td class="hidden" id="type" th:text="${LR.type.id}"></td>
+                                                <td class="hidden" id="requester"  th:text="${LR.requester.id}"></td>
+                                                <td class="hidden" id="status" th:text="${LR.status.id}"></td>
                                             </tr>
 
                                         </tbody>

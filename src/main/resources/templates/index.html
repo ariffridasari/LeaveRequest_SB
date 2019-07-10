@@ -159,26 +159,29 @@
                             </div>
                             <div class="row">
                                 <!-- TWITTER PANEL -->
-                                <div class="col-md-4 col-sm-4 mb">
-                                    <div class="grey-panel pn donut-chart">
-                                        <div class="weather pn">
-                                            <i style="color:black" class="fa fa-github-alt fa-4x"></i>
-                                            <h2 style="color:black">Profile</h2>
-                                            <h4></h4>
-                                        </div>
-                                    </div>                                    
+                                <a th:href="@{/home/profile}">
+                                    <div class="col-md-4 col-sm-4 mb">
+                                        <div class="grey-panel pn donut-chart">
+                                            <div class="weather pn">
+                                                <i style="color:black" class="fa fa-github-alt fa-4x"></i>
+                                                <h2 style="color:black">Profile</h2>
+                                                <h4></h4>
+                                            </div>
+                                        </div>    
+                                    </div>
+                                </a>
+                                <a th:href="@{/logout}">
+                                    <div class="col-md-4 col-sm-4 mb">
+                                        <div class="grey-panel pn donut-chart">
+                                            <div class="weather pn">
+                                                <i style="color:black" class="fa fa-reply fa-4x"></i>
+                                                <h2 style="color:black">Logout</h2>
+                                                <h4></h4>
+                                            </div>
+                                        </div>                                    
 
-                                </div>
-                                <div class="col-md-4 col-sm-4 mb">
-                                    <div class="grey-panel pn donut-chart">
-                                        <div class="weather pn">
-                                            <i style="color:black" class="fa fa-reply fa-4x"></i>
-                                            <h2 style="color:black">Logout</h2>
-                                            <h4></h4>
-                                        </div>
-                                    </div>                                    
-
-                                </div>
+                                    </div>
+                                </a>
 
                             </div>
                             <!-- /row -->
