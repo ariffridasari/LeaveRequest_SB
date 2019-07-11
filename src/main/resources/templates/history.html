@@ -79,6 +79,7 @@
                         <!-- page start-->
                         <div class="content-panel">
                             <div class="adv-table">
+                                <button type="button" class="btn btn-success" style="margin-bottom: 15px;" id="btnPDF"><i class="fa fa-save"></i>&nbsp;&nbsp;Save to PDF</button>
                                 <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered" id="hidden-table-info">
                                     <thead>
                                         <tr>
@@ -105,10 +106,10 @@
                                             <td th:text="${LR.totalLeave}"></td>
                                             <td th:text="${LR.status.name}"></td>
                                             <td th:text="${LR.statusNotes}"></td>
-<!--                                            <td>
-                                                <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Approved</button>
-                                                <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-ban"></i>&nbsp;&nbsp;Rejected</button>
-                                            </td>-->
+                                            <!--                                            <td>
+                                                                                            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-check-circle"></i>&nbsp;&nbsp;Approved</button>
+                                                                                            <button type="button" class="btn btn-danger btn-sm"><i class="fa fa-ban"></i>&nbsp;&nbsp;Rejected</button>
+                                                                                        </td>-->
                                         </tr>
 
                                     </tbody>

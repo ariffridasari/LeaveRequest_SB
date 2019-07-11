@@ -61,9 +61,30 @@ and open the template in the editor.
         </script>
 
         <script type="text/javascript">
-
             $("body").on("click", "#btnPDF", function () {
                 html2canvas($('#hidden-table-info')[0], {
+                    onrendered: function (canvas) {
+                        var data = canvas.toDataURL();
+                        var docDefinition = {
+                            content: [{
+                                    image: data,
+                                    width: 500
+                                }]
+                        };
+                        pdfMake.createPdf(docDefinition).download("Data.pdf");
+                    }
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#hidden-table-info2').DataTable();
+            });
+        </script>
+
+        <script type="text/javascript">
+            $("body").on("click", "#btnPDF2", function () {
+                html2canvas($('#hidden-table-info2')[0], {
                     onrendered: function (canvas) {
                         var data = canvas.toDataURL();
                         var docDefinition = {
@@ -318,12 +339,7 @@ and open the template in the editor.
                     });
                 </script>-->
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-//                var table = $('#hidden-table-info').dataTable();
-                var table2 = $('#hidden-table-info2').dataTable();
-            });
-        </script> 
+        
 
 
 
