@@ -40,12 +40,6 @@
                                                     <input class="form-control " id="isActive" name="isActive" type="text" required />
                                                 </div>
                                             </div>
-                                            <div class="hidden form-group ">
-                                                <label for="isDelete" class="control-label col-lg-2">Status</label>
-                                                <div class="col-lg-10">
-                                                    <input class="form-control " id="isDelete" name="isDelete" type="text" required />
-                                                </div>
-                                            </div>
                                             <div class="form-group">
                                                 <div class="col-lg-offset-2 col-lg-10">
                                                     <button class="btn btn-theme04" type="submit">Delete</button>
@@ -148,7 +142,6 @@
                                             <th>Status User</th>
                                             <th>Action</th>
                                             <th hidden></th>
-                                            <th hidden></th>
                                             <th hidden></th> 
                                         </tr>
                                     </thead>
@@ -163,8 +156,7 @@
                                             </td>
                                             <td class="hidden" id="password" th:text="${Account.password}"></td>
                                             <td class="hidden" id="isActive" th:text="${Account.isActive}"></td>
-                                            <td class="hidden" id="isDelete" th:text="${Account.isDelete}"></td>
-                                        </tr>
+                                           </tr>
 
                                     </tbody>
                                 </table>

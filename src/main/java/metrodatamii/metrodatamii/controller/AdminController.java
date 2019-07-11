@@ -143,7 +143,7 @@ public class AdminController {
 
    @PostMapping("/addDataAcc")
     public String account(Account account, String password) {
-        account.setIsDelete("false");
+//        account.setIsDelete("false");
         account.setIsActive("false");
         account.setPassword(new BCryptPasswordEncoder().encode(password));
         accountRepository.save(account);
@@ -152,7 +152,7 @@ public class AdminController {
 
     @PostMapping("/accountDelete/{id}")
     public String softDelete(@PathVariable("id") String id, @Valid Account account) {
-        account.setIsDelete("true");
+//        account.setIsDelete("true");
         account.setIsActive("false");
         accountRepository.save(account);
         return "redirect:/account";

@@ -16,6 +16,6 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface IAccountRepository extends CrudRepository<Account, String> {
     
-    @Query(value = "SELECT * FROM account WHERE is_delete = 'false'", nativeQuery = true)
+    @Query(value = "SELECT * FROM account", nativeQuery = true)
     List<Account> getAll(); 
 }

@@ -23,7 +23,6 @@ import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
-import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  *
@@ -47,13 +46,11 @@ public class LeaveRequest implements Serializable {
     @NotNull
     @Column(name = "start_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date startDate;
     @Basic(optional = false)
     @NotNull
     @Column(name = "end_date")
     @Temporal(TemporalType.DATE)
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date endDate;
     @Basic(optional = false)
     @NotNull
@@ -186,5 +183,5 @@ public class LeaveRequest implements Serializable {
     public String toString() {
         return "metrodatamii.metrodatamii.entities.LeaveRequest[ id=" + id + " ]";
     }
-
+    
 }

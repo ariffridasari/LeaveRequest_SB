@@ -48,7 +48,37 @@ and open the template in the editor.
         <script type="text/javascript" src="dist/lib/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
         <script src="dist/lib/advanced-form-components.js"></script>
 
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js"></script>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+        <!--        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+                <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>-->
+        <script>
+            $(document).ready(function () {
+                $('#hidden-table-info').DataTable();
+            });
+        </script>
+
+        <script type="text/javascript">
+
+            $("body").on("click", "#btnPDF", function () {
+                html2canvas($('#hidden-table-info')[0], {
+                    onrendered: function (canvas) {
+                        var data = canvas.toDataURL();
+                        var docDefinition = {
+                            content: [{
+                                    image: data,
+                                    width: 500
+                                }]
+                        };
+                        pdfMake.createPdf(docDefinition).download("Data.pdf");
+                    }
+                });
+            });
+        </script>
+
+
 
         <!--Job-->
         <script>
@@ -212,57 +242,6 @@ and open the template in the editor.
             })
         </script>
 
-
-<!--                <script>
-                    $(document).ready(function () {
-                        $('#DelJob').on('show.bs.modal', function (e) {
-                            event.preventDefault();
-                            var _button = $(e.relatedTarget);
-                            var _row = _button.parents("tr");
-                            var _jobId = _row.find("#id").text();
-                            var _jobName = _row.find("#name").text();
-                            $(this).find("#id").val(_jobId);
-                            $(this).find("#name").val(_jobName);
-                        })
-                    })
-                     </script>   -->
-        <!--        <script>
-                    $(document).ready(function () {
-                        $('.table .eBtn').on('click', function (event) {
-                            event.preventDefault();
-                            var href = $(this).attr('href');
-                            $.get(href, function (employee, status) {
-                                $('.myForm #id').val(employee.id);
-                                $('.myForm #firstName').val(employee.firstName);
-                                $('.myForm #lastName').val(employee.lastName);
-                                $('.myForm #email').val(employee.email);
-                                $('.myForm #phoneNumber').val(employee.phoneNumber);
-                                $('.myForm #salary').val(employee.salary);
-                                $('.myForm #manager option:selected').val(employee.manager);
-                                $('.myForm #manager2 option:selected').val(employee.manager);
-                            });
-                            $('.myForm #EditEmployee').modal();
-                        });
-                    });
-                </script>
-                <script>
-                    $(document).ready(function () {
-                        $('.table .btnDel').on('click', function (event) {
-                            event.preventDefault();
-                            var href = $(this).attr('href');
-                            $.get(href, function (employee, status) {
-                                $('.myForm2 #id').val(employee.id);
-                                $('.myForm2 #firstName').val(employee.firstName);
-                                $('.myForm2 #lastName').val(employee.lastName);
-                                $('.myForm2 #email').val(employee.email);
-                                $('.myForm2 #phoneNumber').val(employee.phoneNumber);
-                                $('.myForm2 #salary').val(employee.salary);
-                                $('.myForm2 #manager option:selected').val(employee.manager);
-                            });
-                            $('.myForm2 #SoftDelEmp').modal();
-                        });
-                    });
-                </script>-->
         <script>
             $(document).ready(function () {
                 $('.table .btnDelete').on('click', function (event) {
@@ -341,18 +320,12 @@ and open the template in the editor.
 
         <script type="text/javascript">
             $(document).ready(function () {
-                var oTable = $('#hidden-table-info').dataTable({
-                });
+//                var table = $('#hidden-table-info').dataTable();
+                var table2 = $('#hidden-table-info2').dataTable();
             });
         </script> 
-        <script type="text/javascript">
 
-            $(document).ready(function () {
-                var oTable = $('#hidden-table-info2').dataTable({
 
-                });
-            });
-        </script>
 
     </div>
 </html>
